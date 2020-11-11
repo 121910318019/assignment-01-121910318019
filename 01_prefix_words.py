@@ -32,8 +32,13 @@ All these words start with b, except for “carrot”.
 
 
 def prefix_words(prefix, words):
-    pass
-
+    l=len(prefix);
+    a=[];
+    for i in words:
+        if prefix in i[:l]:
+            a.append(i);
+    return a;
+            
 
 class TestPrefixWords(unittest.TestCase):
 

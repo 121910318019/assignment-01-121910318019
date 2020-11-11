@@ -24,11 +24,35 @@ Although 19 is prime, 91 is not.
 
 # Implement the below function and run the program
 def is_prime(n):
-    pass
+    c=0;
+    r=0;
+    for j in range(1,n):
+        if n%j==0:
+            c+=1;
+    if c<2:
+        r+=1;
+    return r;
 
 
 def is_rotating_prime(num):
-    pass
+    s=str(num);
+    l=list(s);
+    r=0;
+    for i in range(len(l)):
+        s=str();
+        t=0;
+        for j in range(1,len(l)+1):
+            if j!=len(l):
+                s=s+str(l[j]);
+            else:
+                s=s+str(l[0]);
+        l=list(s);
+        t=int(s);
+        is_prime(t);
+    if r==len(s):
+        return True;
+    else:
+        return False;
 
 
 class TestIsRotatingPrime(unittest.TestCase):
