@@ -23,33 +23,39 @@ Although 19 is prime, 91 is not.
 
 
 # Implement the below function and run the program
-def is_prime(n):
-    c=0;
-    r=0;
-    for j in range(1,n):
-        if n%j==0:
-            c+=1;
-    if c<2:
-        r+=1;
-    return r;
+def is_prime(n):   
+    t=0;
+    if(n>1):
+        for i in range(2,n):
+            if(n%i==0):
+                t=1;
+    if(t==0):
+        return True;
+    else:
+        return False;
 
 
 def is_rotating_prime(num):
-    s=str(num);
-    l=list(s);
-    r=0;
-    for i in range(len(l)):
-        s=str();
-        t=0;
-        for j in range(1,len(l)+1):
-            if j!=len(l):
-                s=s+str(l[j]);
-            else:
-                s=s+str(l[0]);
-        l=list(s);
-        t=int(s);
-        is_prime(t);
-    if r==len(s):
+    d=[int(x) for x in str(num)];
+    c=[0];
+    f=[];
+    l=d[:];
+    a=[];
+    for i in  range(len(d)):
+        c[0]=l.pop(len(d)-1);
+        fin=c+l;
+        l=fin[:];
+        f.append(fin);
+    for i in f:
+        strings = [str(integer) for integer in i];
+        a_string = "".join(strings);
+        an_integer = int(a_string);
+        a.append(an_integer);
+    k=0;
+    for i in a:
+        if(is_prime(i)):
+            k+=1;
+    if(k==len(a)):
         return True;
     else:
         return False;

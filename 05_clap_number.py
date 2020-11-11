@@ -24,8 +24,17 @@ import unittest
 
 
 def clap_number(n):
-    pass
-
+    s=[]
+    for i in range(1,n+1):
+        if i%3==0:
+            s.append("clap")
+            continue
+        t=str(i)
+        if('3'in t)or('6'in t)or('9'in t):
+            s.append("clap")
+            continue
+        s.append(str(i))
+    return s
 
 class TestClapNumber(unittest.TestCase):
 
