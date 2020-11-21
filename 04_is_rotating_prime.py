@@ -3,7 +3,6 @@ import unittest
 
 """
 Rotating primes
-
 Given an integer n, return whether every rotation of n is prime.
 Example 1:
 Input:
